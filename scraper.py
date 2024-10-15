@@ -71,7 +71,7 @@ def extract_store_data(session: requests.Session) -> List[Dict[str, Any]]:
 MAX_HISTORY_LENGTH = 10
 
 def save_data_to_mongodb(collection_name: str, data: List[Dict[str, Any]]) -> None:
-    client = MongoClient("mongodb://localhost:27017/")
+    client = MongoClient("mongodb+srv://luizshernandez6:KX67Prz7xgjAhUko@cluster0.5nc4g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     db = client["cargo_track_data"]
     collection = db[collection_name]
     
