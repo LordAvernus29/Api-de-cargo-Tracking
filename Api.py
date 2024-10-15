@@ -6,8 +6,8 @@ from scraper import login, extract_accounts_data, extract_invoice_data, extract_
 
 app = Flask(__name__)
 
-# Configurar MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+# Configurar MongoDB con Atlas URI
+client = MongoClient("mongodb+srv://luizshernandez6:KX67Prz7xgjAhUko@cluster0.5nc4g.mongodb.net/?retryWrites=true&w=majority")
 db = client["cargo_track_data"]
 
 @app.route("/accounts", methods=["GET"])
