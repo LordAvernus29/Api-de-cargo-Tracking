@@ -6,8 +6,8 @@ from scraper import login, extract_accounts_data, extract_invoice_data, extract_
 
 app = Flask(__name__)
 
-# Configurar MongoDB con Atlas URI deshabilitando la validación SSL
-client = MongoClient("mongodb+srv://luizshernandez6:KX67Prz7xgjAhUko@cluster0.5nc4g.mongodb.net/?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE")
+# Configurar MongoDB con Atlas URI sin validar certificados SSL
+client = MongoClient("mongodb+srv://luizshernandez6:KX67Prz7xgjAhUko@cluster0.5nc4g.mongodb.net/?retryWrites=true&w=majority&tlsAllowInvalidCertificates=true")
 db = client["cargo_track_data"]
 
 @app.route("/accounts", methods=["GET"])
@@ -84,4 +84,3 @@ def run_scraper():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
